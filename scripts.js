@@ -30,9 +30,9 @@ function submitForm() {
   } else if (!emailRegex.test(email)) {
     alert("Please enter a valid Kent email address");
   } else if (!idRegex.test(id)) {
-    alert("Please enter a valid student ID");
+    alert("Please enter a valid 9-digit student ID");
   } else if (id < 100000000 || id > 999999999) {
-    alert("Please enter a valid student ID");
+    alert("Please enter a valid 9-digit student ID");
   } else {
     timeRef.child(time).once("value", function (snapshot) {
       var count = snapshot.numChildren();
