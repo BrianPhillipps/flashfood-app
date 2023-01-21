@@ -10,7 +10,8 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
-var seatsAvailable = 20;
+var deliversAvailable = 20;
+
 function submitForm() {
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
@@ -19,23 +20,23 @@ function submitForm() {
   var meal = document.getElementById("meal").value;
   var room = document.getElementById("room").value;
   var time = document.getElementById("time").value;
-  var ref = firebase.database().ref("dorms/" + dorm);
-  var dormRef = firebase.database().ref("dorms");
-  //var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  var ref = firebase.database().ref("times/" + time);
+  var timeRef = firebase.database().ref("times");
+  // var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(kent.edu)$/;
   var idRegex = /^\d+$/;
-  if (name == "" || email == "" || id == "" || dorm == "") {
+  if (name == "" || email == "" || id == "" || dorm == "" || meal == "" || dorm == "" || room == "") {
     alert("Please fill in all fields");
   } else if (!emailRegex.test(email)) {
-    alert("Please enter a valid email address");
+    alert("Please enter a valid Kent email address");
   } else if (!idRegex.test(id)) {
     alert("Please enter a valid student ID");
   } else {
-    dormRef.child(dorm).once("value", function (snapshot) {
+    timeRef.child(time).once("value", function (snapshot) {
       var count = snapshot.numChildren();
-      if (count >= seatsAvailable) {
+      if (count >= deliversAvailable) {
         alert(
-          "Sorry, this dinner is full. Please select another dorm or wait until tomorrow."
+          "Sorry, this dinner is full. Please select another time or wait until tomorrow."
         );
       } else {
         ref.child(id).set({
@@ -47,51 +48,34 @@ function submitForm() {
           email: email,
           dorm: dorm
         });
-        alert("You have been registered for dinner in " + dorm + " dorm!");
+        alert("You have been registered for dinner at " + time + "!");
       }
     });
   }
 }
 
 function clearDatabase() {
-  database.ref("dorms").remove();
+  database.ref("times").remove();
+  alert("database cleared");
 }
 
-var ref = firebase.database().ref("dorms");
+var ref = firebase.database().ref("times");
 
 ref.on("value", function (snapshot) {
-  var eastwayCount = snapshot.child("Eastway").numChildren();
-  document.getElementById("eastway").innerHTML =
-    "Eastway Remaining Seats: " + (seatsAvailable - eastwayCount);
+  var sevenCount = snapshot.child("7:00").numChildren();
+   document.getElementById("7").innerHTML =
+    "Time slots at 7:00 left: " + (deliversAvailable - sevenCount);
 
-  var twinTowersCount = snapshot.child("Twin Towers").numChildren();
-  document.getElementById("twinTowers").innerHTML =
-    "Twin Towers Remaining Seats: " + (seatsAvailable - twinTowersCount);
+  var eightCount = snapshot.child("8:00").numChildren();
+   document.getElementById("8").innerHTML =
+    "Time slots at 8:00 left: " + (deliversAvailable - eightCount);
 
-  var newFrontCount = snapshot.child("New Front").numChildren();
-  document.getElementById("newFront").innerHTML =
-    "New Front Remaining Seats: " + (seatsAvailable - newFrontCount);
+  var nineCount = snapshot.child("9:00").numChildren();
+   document.getElementById("9").innerHTML =
+    "Time slots at 9:00 left: " + (deliversAvailable - nineCount);
 
-  var triTowersCount = snapshot.child("Tri-Towers").numChildren();
-  document.getElementById("triTowers").innerHTML =
-    "Tri Towers Remaining Seats: " + (seatsAvailable - triTowersCount);
-
-  var centenABCount = snapshot.child("Centennial Courts A+B").numChildren();
-  document.getElementById("centenAB").innerHTML =
-    "Centennial Courts A and B Remaining Seats: " +
-    (seatsAvailable - centenABCount);
-
-  var centenCDCount = snapshot.child("Centennial Courts C+D").numChildren();
-  document.getElementById("centenCD").innerHTML =
-    "Centennial Courts C and D Remaining Seats: " +
-    (seatsAvailable - centenCDCount);
-
-  var centenEFCount = snapshot.child("Centennial Courts E+F").numChildren();
-  document.getElementById("centenEF").innerHTML =
-    "Centennial Courts E and F Remaining Seats: " +
-    (seatsAvailable - centenEFCount);
-
-  var quadCount = snapshot.child("The Quad").numChildren();
-  document.getElementById("quad").innerHTML =
-    "The Quad Remaining Seats: " + (seatsAvailable - quadCount);
+ 
 });
+
+
+
