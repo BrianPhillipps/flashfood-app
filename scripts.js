@@ -21,7 +21,8 @@ function submitForm() {
   var time = document.getElementById("time").value;
   var ref = firebase.database().ref("dorms/" + dorm);
   var dormRef = firebase.database().ref("dorms");
-  var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  //var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(kent.edu)$/;
   var idRegex = /^\d+$/;
   if (name == "" || email == "" || id == "" || dorm == "") {
     alert("Please fill in all fields");
