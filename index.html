@@ -3,64 +3,97 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
+    <title>FlashFood</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <plink rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleais.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
-  <body>
-    <form>
-      <label>Name:</label>
-      <input type="text" id="name" />
-      <br />
-      <label>Email:</label>
-      <input type="email" id="email" />
-      <br />
-      <label>Student ID:</label>
-      <input type="text" id="studentID" />
-      <br />
-      <label>Meal:</label>
-      <input type="text" id="meal" />
-      <br />
-      <label>Room Number:</label>
-      <input type="text" id="room" />
-      <br />
-      
-      <label>Time:</label>
-      <select id="time">
-        <option value="7:00">7:00 PM</option>
-        <option value="8:00">8:00 PM</option>
-        <option value="9:00">9:00 PM</option>
-        </select>
-        <br>
-        <label>Dorms:</label>
-      <select id="dorm">
-        <option value="Eastway">Eastway</option>
-        <option value="Twin Towers">Twin Towers</option>
-        <option value="New Front">New Front</option>
-        <option value="Tri-Towers">Tri-Towers</option>
-        <option value="Centennial Courts A+B">Centennial Courts A+B</option>
-        <option value="Centennial Courts C+D">Centennial Courts C+D</option>
-        <option value="Centennial Courts E+F">Centennial Courts E+F</option>
-        <option value="The Quad">The Quad</option>
-      </select>
-      <br />
-      <button type="button" onclick="submitForm()">Submit</button>
-      <button type="button" onclick="clearDatabase()">Clear Database</button>
-      <br />
-    </form>
+  <body> 
 
-    <p id="eastway">Eastway Remaining Seats:</p>
-    <p id="twinTowers">Twin Towers Remaining Seats:</p>
-    <p id="newFront">New Front Remaining Seats:</p>
-    <p id="triTowers">Tri Towers Remaining Seats:</p>
-    <p id="centenAB">Centennial Courts A and B Remaining Seats:</p>
-    <p id="centenCD">Centennial Courts C and D Remaining Seats:</p>
-    <p id="centenEF">Centennial Courts E and F Remaining Seats:</p>
-    <p id="quad">The Quad Remaining Seats:</p>
+    <div class="loader-wrapper">
+      <span class="loader"><img src="img/lightning-removebg-preview.png"></span>
+    </div>
+
+<div class="content">
+    <h1 style=" color:#00205C; text-shadow: 2px 2px #EBA900; font-family: 'Source Sans Pro', sans-serif; text-align: center;">FlashFood</h1>
+    
+      <form>
+        <div class="container">
+          <div class="input">
+            <label>Name:</label>
+            <input type="text" id="name">
+         </div>
+          <div class="input">
+          <label>Email:</label>
+          <input type="email" id="email" />
+          </div>
+          <div class="input">
+          <label>Student ID:</label>
+          <input type="text" id="studentID" />
+          </div>
+          <div class="input">
+          <label>Meal:</label>
+          <input type="text" id="meal" />
+          </div>
+          <div class="input">
+          <label>Room Number:</label>
+          <input type="text" id="room" />
+          </div>
+          
+          <div class="input">
+          <label>Time:</label>
+          <select id="time">
+            <option value="7:00">7:00 PM</option>
+            <option value="8:00">8:00 PM</option>
+            <option value="9:00">9:00 PM</option>
+            </select>
+            </div>
+            
+            <div class="input">
+            <label>Dorms:</label>
+          <select id="dorm">
+            <option value="Eastway">Eastway</option>
+            <option value="Twin Towers">Twin Towers</option>
+            <option value="New Front">New Front</option>
+            <option value="Tri-Towers">Tri-Towers</option>
+            <option value="Centennial Courts A+B">Centennial Courts A+B</option>
+            <option value="Centennial Courts C+D">Centennial Courts C+D</option>
+            <option value="Centennial Courts E+F">Centennial Courts E+F</option>
+            <option value="The Quad">The Quad</option>
+          </select>
+          </div>
+          <div class="buttons">
+          <button type="button" onclick="submitForm()">Submit</button>
+          <button type="button" onclick="clearDatabase()">Clear Database</button>
+        </div>
+        </form>
+  </div>
+    <!-- <div class="timeSlots">
+      <p id="7">Deliveries left at 7:00: </p>
+      <p id="8">Deliveries left at 8:00: </p>
+      <p id="9">Deliveries left at 9:00:</p>
+    </div> -->
+  </div>
 
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
     <script src="scripts.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(".content").hide();
+        setTimeout(function() {
+          $(".loader-wrapper").fadeOut("slow", function(){
+              $(".content").fadeIn("slow");
+          });
+        }, 2500);
+      });
+    </script>
+    
+    
+    
   </body>
 </html>
