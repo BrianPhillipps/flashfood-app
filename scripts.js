@@ -1,3 +1,4 @@
+// firebase connection
 var firebaseConfig = {
   apiKey: "AIzaSyAVfWpeD9wGo0_WjL3U3Vl8rntODLn8Thc",
   authDomain: "doordash-dining-hall.firebaseapp.com",
@@ -10,8 +11,10 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
-var deliversAvailable = 20;
 
+
+// form submission
+var deliversAvailable = 20;
 function submitForm() {
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
@@ -30,9 +33,7 @@ function submitForm() {
   } else if (!emailRegex.test(email)) {
     alert("Please enter a valid Kent email address");
   } else if (!idRegex.test(id)) {
-    alert("Please enter a valid 9-digit student ID");
-  } else if (id < 100000000 || id > 999999999) {
-    alert("Please enter a valid 9-digit student ID");
+    alert("Please enter a valid student ID");
   } else {
     timeRef.child(time).once("value", function (snapshot) {
       var count = snapshot.numChildren();
@@ -56,6 +57,7 @@ function submitForm() {
   }
 }
 
+// clear database
 function clearDatabase() {
   database.ref("times").remove();
   alert("database cleared");
@@ -79,5 +81,17 @@ ref.on("value", function (snapshot) {
  
 });
 
+// Page popup
+window.addEventListener("load", function(){
+  this.setTimeout(
+    function open(event){
+      document.querySelector(".popUp").style.display = "block";
+    },
+    4000
+  )
+});
+document.querySelector("#close").addEventListener
+("click", function(){
+  document.querySelector(".popUp").style.display = "none";
 
-
+});
