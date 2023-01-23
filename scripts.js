@@ -86,23 +86,17 @@ var firebaseConfig = {
    
   });
   
-// // Page popup
-//   window.addEventListener("load", function(){
-//     this.setTimeout(
-//       function open(event){
-//         document.querySelector(".popUp").style.display = "block";
-//       },
-//       4000
-//     )
-//   });
-//   document.querySelector("#close").addEventListener
-//   ("click", function(){
-//     document.querySelector(".popUp").style.display = "none";
-  
-//   });
-  
-  
+// Page popup
+   let popup = document.getElementById("popup");
 
+   function openpopup(){
+    popup.classList.add("open-popup");
+   }
+
+   function closepopup(){
+    popup.classList.remove("open-popup");
+   }
+   
 // loading page
 $(document).ready(function(){
     $(".content").hide();
