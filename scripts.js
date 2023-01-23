@@ -36,6 +36,8 @@ var firebaseConfig = {
       alert("Please enter a valid Kent email address");
     } else if (!idRegex.test(id)) {
       alert("Please enter a valid student ID");
+    } else if (id < 100000000 || id > 999999999) {
+      alert("Please enter a valid student ID");
     } else {
       timeRef.child(time).once("value", function (snapshot) {
         var count = snapshot.numChildren();
