@@ -1,118 +1,122 @@
 .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 3px solid black;
-    border-radius: 5%;
-    padding: 10px;
-    background-color: #FAF9F6;
-    padding-bottom: 30px;
-  }
-  body {
-    background: hsla(219, 100%, 18%, 1);
-    background: linear-gradient(180deg, hsla(219, 100%, 18%, 1) 20%, hsla(43, 100%, 46%, 1) 100%);
-    background: -moz-linear-gradient(180deg, hsla(219, 100%, 18%, 1) 20%, hsla(43, 100%, 46%, 1) 100%);
-    background: -webkit-linear-gradient(180deg, hsla(219, 100%, 18%, 1) 20%, hsla(43, 100%, 46%, 1) 100%);
-    overflow: hidden
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid black;
+  border-radius: 5%;
+  padding: 10px;
+  background-color: #FAF9F6;
+  padding-bottom: 30px;
+}
+body {
+  background: hsla(219, 100%, 18%, 1);
+  background: linear-gradient(180deg, hsla(219, 100%, 18%, 1) 20%, hsla(43, 100%, 46%, 1) 100%);
+  background: -moz-linear-gradient(180deg, hsla(219, 100%, 18%, 1) 20%, hsla(43, 100%, 46%, 1) 100%);
+  background: -webkit-linear-gradient(180deg, hsla(219, 100%, 18%, 1) 20%, hsla(43, 100%, 46%, 1) 100%);
+  overflow: hidden
+}
 
-  .popup {
-    background: #242526;
-    width: 450px;
-    padding: 0 30px 40px;
-    position: absolute;
-    transform: translate(-50%, -50%) scale(0.1);
-    left: 50%;
-    top: 0;
-    border-radius: 8px;
-    font-family: "Poppins",sans-serif;
-    visibility: hidden;
-    transition: transform 0.4s, top 0,4s;
-    
-  }
-
-  .open-popup {
-    visibility: visible;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(1);
- }
-
-  .popup button {
-    display: block;
-    background-color: transparent;
-    font-size: 30px;
-    color: grey;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
-
-  .menuHead {
-    text-align: center;
-  }
- 
-  .input {
-    padding: 5px;
-  }
-
-  .dormList {
-    padding: 5px;
-  }
-
-  .loader-wrapper {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .loader {
-    position: absolute;
-    top: 30%;
-    left: 45%;
-    transform: translate(-50%, -50%);
-    animation: size-animation 2s infinite ease;
-  }
+.popup {
+  background: #242526;
+  width: 450px;
+  padding: 0 30px 40px;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0.1);
+  left: 50%;
+  top: 0;
+  border-radius: 8px;
+  font-family: "Poppins",sans-serif;
+  visibility: hidden;
+  transition: transform 0.4s, top 0,4s;
+  opacity: 0;
   
-  @keyframes size-animation {
-    0% {transform: scale(1);}
-    50% {transform: scale(1.5);}
-    100% {transform: scale(1);}
-  }
+}
 
-  input {
-    border: 2px solid grey;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-    padding: 3px;
-  }
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 0.5s ease-in;
+}
 
-  select {
-    border: 2px solid grey;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-  }
- 
-  @media only screen and (max-width: 600px) {
-    .content{
-      width: 50%;
-      height: 50%;
-      padding-bottom: 0;
-    }
-  }
-  
-  .bolt {
-    height: 500px;
-    width: 300px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 
-  .contentButtons {
-    padding-top: 30px;
+.popup button {
+  display: block;
+  background-color: transparent;
+  font-size: 30px;
+  color: grey;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+}
+
+.menuHead {
+  text-align: center;
+}
+
+.input {
+  padding: 5px;
+}
+
+.dormList {
+  padding: 5px;
+}
+
+.loader-wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  animation: size-animation 2s infinite ease;
+}
+
+@keyframes size-animation {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.5);}
+  100% {transform: scale(1);}
+}
+
+input {
+  border: 2px solid grey;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  padding: 3px;
+}
+
+select {
+  border: 2px solid grey;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+@media only screen and (max-width: 600px) {
+  .content{
+    width: 50%;
+    height: 50%;
+    padding-bottom: 0;
   }
+}
+
+.bolt {
+  height: 500px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contentButtons {
+  padding-top: 30px;
+}
