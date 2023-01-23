@@ -14,8 +14,10 @@ var firebaseConfig = {
   
   
   // form submission
+  var currentDate = new Date();
   var deliversAvailable = 20;
   function submitForm() {
+    var date = currentDate.toString();
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var id = document.getElementById("studentID").value;
@@ -26,7 +28,6 @@ var firebaseConfig = {
     var phone = document.getElementById("phone").value;
     var ref = firebase.database().ref("times/" + time);
     var timeRef = firebase.database().ref("times");
-    // var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(kent.edu)$/;
     var idRegex = /^\d+$/;
     if (name == "" || email == "" || id == "" || dorm == "" || meal == "" || dorm == "" || room == "" || phone == "") {
@@ -46,6 +47,7 @@ var firebaseConfig = {
         } else {
           ref.child(id).set({
             id: id,
+            date: date,
             name: name,
             phone: phone,
             time: time,
