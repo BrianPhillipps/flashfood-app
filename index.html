@@ -7,8 +7,8 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <plink rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleais.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
@@ -37,6 +37,10 @@
           <input type="text" id="studentID" />
           </div>
           <div class="input">
+            <label>Phone Number: </label>
+            <input type="tel" id="phone" name="phone" placeholder="123-456-6789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+
+          <div class="input">
           <label>Meal:</label>
           <input type="text" id="meal" />
           </div>
@@ -44,7 +48,6 @@
           <label>Room Number:</label>
           <input type="text" id="room" />
           </div>
-          
           <div class="input">
           <label>Time:</label>
           <select id="time">
@@ -90,18 +93,5 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
     <script src="scripts.js"></script>
-    <script>
-      $(document).ready(function(){
-        $(".content").hide();
-        setTimeout(function() {
-          $(".loader-wrapper").fadeOut("slow", function(){
-              $(".content").fadeIn("slow");
-          });
-        }, 2500);
-      });
-    </script>
-    
-    
-    
   </body>
 </html>
