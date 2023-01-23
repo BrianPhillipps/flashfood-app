@@ -28,15 +28,20 @@
     border-radius: 8px;
     font-family: "Poppins",sans-serif;
     visibility: hidden;
-    transition: transform 0.4s, top 0,4s;
-    
+    transition: transform 0.4s, top 0,4s;    
   }
 
   .open-popup {
     visibility: visible;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
+    /* background-color: rgba(0, 0, 0, 0.7);
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0; */
  }
+
 
   .popup button {
     display: block;
@@ -114,5 +119,18 @@
   }
 
   .contentButtons {
-    padding-top: 30px;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    /*padding-top: 30px; */
   }
+
+  .button {
+    background-color: #144e88;
+    font-size: 16px;
+    border-radius: 50%;
+
+
+  }
+  
+
