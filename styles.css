@@ -5,9 +5,10 @@
   transform: translate(-50%, -50%);
   border: 1px solid black;
   border-radius: 5%;
-  padding: 10px;
+  padding: 15px;
   background-color: #ffffff;
   padding-bottom: 30px;
+  width: 250px;
 }
 body {
   background: hsla(219, 100%, 18%, 1);
@@ -60,12 +61,11 @@ body {
 
 .input {
   padding: 5px;
+  text-align: center;
+  margin: 0 auto;
 }
 
-input, label {
-  display: block;
-  /*flex-direction: column;*/
-}
+
 
 .dormList {
   padding: 5px;
@@ -139,4 +139,3 @@ select {
 
   }
   
-
