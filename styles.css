@@ -125,17 +125,24 @@ select {
 }
 
   .contentButtons {
-    padding: 15px 32px;
     text-align: center;
-    display: inline-block;
     /*padding-top: 30px; */
+    display: flex;
+    justify-content: space-between;
+
   }
 
-  .button {
+ .contentButtons button {
     background-color: #144e88;
     font-size: 16px;
-    border-radius: 50%;
-
-
+    cursor: pointer;
+    display: inline;
+    border: 1px outset blue;
+    height:100px;
+    width:100px;
   }
   
+.button:hover {
+    background-color: white;
+    border: 0px solid white;
+}
