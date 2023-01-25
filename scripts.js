@@ -19,6 +19,8 @@ var currentDate = new Date();
 var deliversAvailable = 20;
 async function submitForm() {
   var date = currentDate.toString();
+  var selectedTime = new Date();
+  var hour = selectedTime.getHours();
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
   var id = document.getElementById("studentID").value;
@@ -31,6 +33,8 @@ async function submitForm() {
   var timeRef = firebase.database().ref("times");
   var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(kent.edu)$/;
   var idRegex = /^\d+$/;
+  selectedTime.setHours(time.split(':')[0], time.split(':')[1], 0);
+
 
   if (name == "" || email == "" || id == "" || dorm == "" || meal == "" || dorm == "" || room == "" || phone == "") {
     alert("Please fill in all fields");
@@ -41,11 +45,16 @@ async function submitForm() {
     alert("Please enter a valid student ID");
   } else if (id < 100000000 || id > 999999999) {
     alert("Please enter a valid student ID");
-  } else {
+  } else if (selectedTime.getHours() > 20) {
+    alert("Delivery is closed. Come back tomorrow and order between 6-8 P.M.");
+  } else if (selectedTime < currentDate) {
+    alert("Selected time has already passed, please select a valid time");
+  } 
+   else {
     var studentRef = firebase.database().ref("students");
     const studentSnapshot = await studentRef.child(id).once("value");
     if(studentSnapshot.exists()) {
-      alert("This user is already in");
+      alert("You have an existing order already.");
       return;
     }
     const timeSnapshot = await timeRef.child(time).once("value");
@@ -71,7 +80,10 @@ async function submitForm() {
         name: name,
         email: email
       });
-      alert("You have been registered for dinner at " + time + "!");
+      if (hour > 12) {
+        hour -= 12;
+      }
+      alert("You have been registered for dinner at " + hour + ":" + time.split(':')[1] + "!");
     }
   }
 }
