@@ -8,6 +8,7 @@ var firebaseConfig = {
   messagingSenderId: "1017765572736",
   appId: "1:1017765572736:web:e6237d4801c629f0c5f665",
 };
+
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
@@ -16,7 +17,7 @@ var database = firebase.database();
 // form submission
 var currentDate = new Date();
 var deliversAvailable = 20;
-function submitForm() {
+async function submitForm() {
   var date = currentDate.toString();
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
@@ -30,13 +31,8 @@ function submitForm() {
   var timeRef = firebase.database().ref("times");
   var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(kent.edu)$/;
   var idRegex = /^\d+$/;
-  ref.child(id).once("value", function(snapshot) {
-    if(snapshot.exists()) {
-      alert("This user is already in");
-      return;
-    }
-  });
-   if (name == "" || email == "" || id == "" || dorm == "" || meal == "" || dorm == "" || room == "" || phone == "") {
+
+  if (name == "" || email == "" || id == "" || dorm == "" || meal == "" || dorm == "" || room == "" || phone == "") {
     alert("Please fill in all fields");
   }
     else if (!emailRegex.test(email)) {
@@ -46,29 +42,42 @@ function submitForm() {
   } else if (id < 100000000 || id > 999999999) {
     alert("Please enter a valid student ID");
   } else {
-    timeRef.child(time).once("value", function (snapshot) {
-      var count = snapshot.numChildren();
-      if (count >= deliversAvailable) {
-        alert(
-          "Sorry, this dinner is full. Please select another time or wait until tomorrow."
-        );
-      } else {
-        ref.child(id).set({
-          id: id,
-          date: date,
-          name: name,
-          phone: phone,
-          time: time,
-          room: room,
-          meal: meal,
-          email: email,
-          dorm: dorm
-        });
-        alert("You have been registered for dinner at " + time + "!");
-      }
-    });
+    var studentRef = firebase.database().ref("students");
+    const studentSnapshot = await studentRef.child(id).once("value");
+    if(studentSnapshot.exists()) {
+      alert("This user is already in");
+      return;
+    }
+    const timeSnapshot = await timeRef.child(time).once("value");
+    var count = timeSnapshot.numChildren();
+    if (count >= deliversAvailable) {
+      alert(
+        "Sorry, this dinner is full. Please select another time or wait until tomorrow."
+      );
+    } else {
+      ref.child(id).set({
+        id: id,
+        date: date,
+        name: name,
+        phone: phone,
+        time: time,
+        room: room,
+        meal: meal,
+        email: email,
+        dorm: dorm
+      });
+      studentRef.child(id).set({
+        id: id,
+        name: name,
+        email: email
+      });
+      alert("You have been registered for dinner at " + time + "!");
+    }
   }
 }
+
+
+
 
 // clear database
 function clearDatabase() {
@@ -76,30 +85,11 @@ function clearDatabase() {
   alert("database cleared");
 }
 
-var ref = firebase.database().ref("times");
-
-ref.on("value", function (snapshot) {
-  var sevenCount = snapshot.child("7:00").numChildren();
-   document.getElementById("7").innerHTML =
-    "Time slots at 7:00 left: " + (deliversAvailable - sevenCount);
-
-  var eightCount = snapshot.child("8:00").numChildren();
-   document.getElementById("8").innerHTML =
-    "Time slots at 8:00 left: " + (deliversAvailable - eightCount);
-
-  var nineCount = snapshot.child("9:00").numChildren();
-   document.getElementById("9").innerHTML =
-    "Time slots at 9:00 left: " + (deliversAvailable - nineCount);
-
- 
-});
-
 // Page popup
  let popup = document.getElementById("popup");
 
  function openpopup(){
   popup.classList.add("open-popup");
-  popup.style.opacity = 1;
  }
 
  function closepopup(){
