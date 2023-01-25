@@ -30,7 +30,13 @@ function submitForm() {
   var timeRef = firebase.database().ref("times");
   var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(kent.edu)$/;
   var idRegex = /^\d+$/;
-  if (name == "" || email == "" || id == "" || dorm == "" || meal == "" || dorm == "" || room == "" || phone == "") {
+  ref.child(id).once("value", function(snapshot) {
+    if(snapshot.exists()) {
+      alert("This user is already in");
+      return;
+    }
+  });
+   if (name == "" || email == "" || id == "" || dorm == "" || meal == "" || dorm == "" || room == "" || phone == "") {
     alert("Please fill in all fields");
   }
     else if (!emailRegex.test(email)) {
