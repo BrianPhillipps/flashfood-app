@@ -83,9 +83,6 @@ body {
   align-items: center;
 }
 .loader {
-  position: absolute;
-  top: 30%;
-  left: 45%;
   transform: translate(-50%, -50%);
   animation: size-animation 2s infinite ease;
 }
@@ -115,14 +112,7 @@ select {
   }
 }
 
-.bolt {
-  height: 500px;
-  width: 300px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
 
   .contentButtons {
     text-align: center;
@@ -133,7 +123,7 @@ select {
   }
 
  .contentButtons button {
-    background-color: #144e88;
+    background-color: blue;
     font-size: 16px;
     cursor: pointer;
     display: inline;
