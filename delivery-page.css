@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #00285C;
+    color: white;
+  }
+  h1 {
+    color: #FFC72C;
+  }
+  a {
+    color: white;
+    text-decoration: underline;
+  }
