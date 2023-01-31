@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Order Confirmation</title>
-    <link href="delivery-page.css" rel="stylesheet">
-  </head>
-  <body>
-    <h1>Order Confirmation</h1>
-    <p>Thank you for your order!</p>
-    <p> Your order will be delivered at this time: <span id="deliveryTime"></span></p>
+	<head>
+		<title>Order Confirmation</title>
+		<link href="delivery-page.css" rel="stylesheet" />
+	</head>
+	<body>
+		<h1>Order Confirmation</h1>
+		<p>Thank you for your order!</p>
+		<p id="delivery">Your order will be delivered at this time:</p>
+		<script>
+			var time = window.localStorage.getItem("time");
+			document.getElementById("delivery").innerHTML += time;
+		</script>
+		<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
+		<script>
+			// Your web app's Firebase configuration
+			var firebaseConfig = {
+				apiKey: "AIzaSyAVfWpeD9wGo0_WjL3U3Vl8rntODLn8Thc",
+				authDomain: "doordash-dining-hall.firebaseapp.com",
+				databaseURL: "https://doordash-dining-hall-default-rtdb.firebaseio.com",
+				projectId: "doordash-dining-hall",
+				storageBucket: "doordash-dining-hall.appspot.com",
+				messagingSenderId: "1017765572736",
+				appId: "1:1017765572736:web:e6237d4801c629f0c5f665",
+			};
 
-    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-  apiKey: "AIzaSyAVfWpeD9wGo0_WjL3U3Vl8rntODLn8Thc",
-  authDomain: "doordash-dining-hall.firebaseapp.com",
-  databaseURL: "https://doordash-dining-hall-default-rtdb.firebaseio.com",
-  projectId: "doordash-dining-hall",
-  storageBucket: "doordash-dining-hall.appspot.com",
-  messagingSenderId: "1017765572736",
-  appId: "1:1017765572736:web:e6237d4801c629f0c5f665",
-};
-    </script>
-  </body>
+			firebase.initializeApp(firebaseConfig);
+			var database = firebase.database();
+		</script>
+	</body>
 </html>
