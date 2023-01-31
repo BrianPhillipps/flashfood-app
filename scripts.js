@@ -80,10 +80,7 @@ async function submitForm() {
         name: name,
         email: email
       });
-      if (hour > 12) {
-        hour -= 12;
-      }
-      alert("You have been registered for dinner at " + hour + ":" + time.split(':')[1] + "!");
+      window.location = "deliverypage.html";
     }
   }
 }
