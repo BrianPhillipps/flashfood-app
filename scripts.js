@@ -15,6 +15,7 @@ var database = firebase.database();
 // form submission
 var currentDate = new Date();
 var deliversAvailable = 20;
+var currentTime = new Date();
 async function submitForm() {
 	var date = currentDate.toString();
 	var selectedTime = new Date();
@@ -49,9 +50,7 @@ async function submitForm() {
 		alert("Please enter a valid student ID");
 	} else if (id < 100000000 || id > 999999999) {
 		alert("Please enter a valid student ID");
-	} else if (selectedTime.getHours() > 20) {
-		alert("Delivery is closed. Come back tomorrow and order between 6-8 P.M.");
-	} else if (selectedTime < currentDate) {
+	} else if (selectedTime < currentTime) {
 		alert("Selected time has already passed, please select a valid time");
 	} else {
 		var studentRef = firebase.database().ref("students");
