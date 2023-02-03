@@ -94,9 +94,15 @@ body {
 }
 
 input {
-  border: 2px solid grey;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border: none;
+  background-color: whitesmoke;
+  border-bottom: 1px solid gray;
+  width: 90%;
   padding: 3px;
+}
+
+textarea:focus, input:focus{
+  outline: none;
 }
 
 select {
@@ -105,10 +111,10 @@ select {
 }
 
 @media only screen and (max-width: 600px) {
-  .content{
+  .container{
     width: 50%;
-    height: 50%;
-    padding-bottom: 0;
+    height: 0%;
+    padding-bottom: 0; 
   }
 }
 
