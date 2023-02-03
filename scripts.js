@@ -33,7 +33,12 @@ async function submitForm() {
 	var idRegex = /^\d+$/;
 	selectedTime.setHours(time.split(":")[0], time.split(":")[1], 0);
 
-	if (
+	let now = new Date();
+	let tenMinutes = new Date(now.getTime() + 10 * 60 * 1000);
+
+	if (selectedTime < tenMinutes) {
+		alert("Please select a time that is at least 10 minutes from now.");
+	} else if (
 		name == "" ||
 		email == "" ||
 		id == "" ||
