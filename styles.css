@@ -6,9 +6,9 @@
   border: 1px solid black;
   border-radius: 5%;
   padding: 15px;
-  background-color: #ffffff;
+  background-color: whitesmoke;
   padding-bottom: 30px;
-  width: 250px;
+  width: 300px;
 }
 body {
   background: hsla(219, 100%, 18%, 1);
@@ -114,25 +114,46 @@ select {
 
 
 
-  .contentButtons {
+  .topButtons {
     text-align: center;
-    /*padding-top: 30px; */
+    padding: 10px 0 30px 0;
     display: flex;
-    justify-content: space-between;
-
+    justify-content: space-evenly;
+    align-items: center;
   }
 
- .contentButtons button {
-    background-color: blue;
+ .topButtons button {
+    background-color: #00205C;
+    color: white;
     font-size: 16px;
     cursor: pointer;
     display: inline;
-    border: 1px outset blue;
     height:100px;
     width:100px;
+    border: 0px solid white;
   }
   
-.button:hover {
-    background-color: white;
-    border: 0px solid white;
+.button-submit {
+  padding: 30px;
+  background-color: #EBA900;
+  width: 100%;
+  border: 0px solid white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.shrink-on-hover {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.shrink-on-hover:hover, .shrink-on-hover:focus, .shrink-on-hover:active {
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
 }
