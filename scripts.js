@@ -119,3 +119,8 @@ $(document).ready(function () {
 		});
 	}, 2500);
 });
+
+// Check Order
+function checkOrder() {
+	window.open("checkorder.html", "_blank");
+}
