@@ -18,7 +18,7 @@ body {
   overflow: hidden;
 }
 
-  .popup {
+  /*.popup {
     background: #242526;
     width: 450px;
     padding: 0 30px 40px;
@@ -30,21 +30,21 @@ body {
     font-family: "Poppins",sans-serif;
     visibility: hidden;
     transition: transform 0.4s, top 0,4s;    
-  }
+  }*/
 
-  .open-popup {
+  /*.open-popup {
     visibility: visible;
     top: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);*/
     /* background-color: rgba(0, 0, 0, 0.7);
      top: 0;
      left: 0;
      bottom: 0;
-     right: 0; */
- }
+     right: 0; 
+ }*/
 
 
-.popup button {
+/*.popup button {
   display: block;
   background-color: transparent;
   font-size: 30px;
@@ -53,11 +53,11 @@ body {
   outline: none;
   cursor: pointer;
 
-}
+}*/
 
-.menuHead {
+/*.menuHead {
   text-align: center;
-}
+}*/
 
 .input {
   padding: 5px;

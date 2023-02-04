@@ -101,7 +101,7 @@ function clearDatabase() {
 }
 
 // Page popup
-let popup = document.getElementById("popup");
+/*let popup = document.getElementById("popup");
 
 function openpopup() {
 	popup.classList.add("open-popup");
@@ -109,7 +109,7 @@ function openpopup() {
 
 function closepopup() {
 	popup.classList.remove("open-popup");
-}
+}*/
 
 // loading page
 $(document).ready(function () {
@@ -124,4 +124,8 @@ $(document).ready(function () {
 // Check Order
 function checkOrder() {
 	window.open("checkorder.html", "_blank");
+}
+
+function checkMenu() {
+	window.open("checkmenu.html", "_blank");
 }
