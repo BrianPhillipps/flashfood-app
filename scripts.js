@@ -36,9 +36,7 @@ async function submitForm() {
 	let now = new Date();
 	let tenMinutes = new Date(now.getTime() + 10 * 60 * 1000);
 
-	if (selectedTime < tenMinutes) {
-		alert("Please select a time that is at least 10 minutes from now.");
-	} else if (
+	 if (
 		name == "" ||
 		email == "" ||
 		id == "" ||
@@ -70,6 +68,9 @@ async function submitForm() {
 			alert(
 				"Sorry, this dinner is full. Please select another time or wait until tomorrow."
 			);
+		} 
+		else if (selectedTime < tenMinutes) {
+			alert("Please select a time that is at least 10 minutes from now.");
 		} else {
 			studentRef.child(id).set({
 				id: id,
