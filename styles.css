@@ -111,15 +111,6 @@ select {
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
 
-@media only screen and (max-width: 600px) {
-  .container{
-    width: 50%;
-    height: 0%;
-    padding-bottom: 0; 
-  }
-}
-
-
 
   .topButtons {
     text-align: center;
