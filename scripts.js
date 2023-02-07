@@ -19,6 +19,7 @@ var currentTime = new Date();
 async function submitForm() {
 	var date = currentDate.toString();
 	var selectedTime = new Date();
+	var status = "Ordered";
 	var name = document.getElementById("name").value;
 	var email = document.getElementById("email").value;
 	var id = document.getElementById("studentID").value;
@@ -67,7 +68,9 @@ async function submitForm() {
 				"Sorry, this dinner is full. Please select another time or wait until tomorrow."
 			);
 		} else if (selectedTime < tenMinutes) {
-			alert("Please select a time valid time. Make sure it is atleast 10 minutes from now.");
+			alert(
+				"Please select a time valid time. Make sure it is atleast 10 minutes from now."
+			);
 		} else {
 			studentRef.child(id).set({
 				id: id,
@@ -76,6 +79,7 @@ async function submitForm() {
 			});
 			ref.child(id).set({
 				id: id,
+				status: status,
 				date: date,
 				name: name,
 				phone: phone,
