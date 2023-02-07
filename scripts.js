@@ -36,7 +36,7 @@ async function submitForm() {
 	let now = new Date();
 	let tenMinutes = new Date(now.getTime() + 10 * 60 * 1000);
 
-	 if (
+	if (
 		name == "" ||
 		email == "" ||
 		id == "" ||
@@ -68,8 +68,7 @@ async function submitForm() {
 			alert(
 				"Sorry, this dinner is full. Please select another time or wait until tomorrow."
 			);
-		} 
-		else if (selectedTime < tenMinutes) {
+		} else if (selectedTime < tenMinutes) {
 			alert("Please select a time that is at least 10 minutes from now.");
 		} else {
 			studentRef.child(id).set({
@@ -93,23 +92,6 @@ async function submitForm() {
 		}
 	}
 }
-
-// clear database
-function clearDatabase() {
-	database.ref("times").remove();
-	alert("database cleared");
-}
-
-// Page popup
-/*let popup = document.getElementById("popup");
-
-function openpopup() {
-	popup.classList.add("open-popup");
-}
-
-function closepopup() {
-	popup.classList.remove("open-popup");
-}*/
 
 // loading page
 $(document).ready(function () {
