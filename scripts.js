@@ -42,8 +42,8 @@ async function submitForm() {
 		id == "" ||
 		dorm == "" ||
 		meal == "" ||
-		dorm == "" ||
 		room == "" ||
+		time == "" ||
 		phone == ""
 	) {
 		alert("Please fill in all fields");
