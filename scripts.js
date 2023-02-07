@@ -53,8 +53,6 @@ async function submitForm() {
 		alert("Please enter a valid student ID");
 	} else if (id < 100000000 || id > 999999999) {
 		alert("Please enter a valid student ID");
-	} else if (selectedTime < currentTime) {
-		alert("Selected time has already passed, please select a valid time");
 	} else {
 		var studentRef = firebase.database().ref("students");
 		const studentSnapshot = await studentRef.child(id).once("value");
@@ -69,7 +67,7 @@ async function submitForm() {
 				"Sorry, this dinner is full. Please select another time or wait until tomorrow."
 			);
 		} else if (selectedTime < tenMinutes) {
-			alert("Please select a time that is at least 10 minutes from now.");
+			alert("Please select a time valid time. Make sure it is atleast 10 minutes from now.");
 		} else {
 			studentRef.child(id).set({
 				id: id,
