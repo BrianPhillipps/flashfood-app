@@ -1,0 +1,49 @@
+/* Set global font family and size */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  /* Center the heading */
+  h1 {
+    text-align: center;
+  }
+  
+  /* Style the input field and button */
+  #studentIdInput {
+    display: block;
+    margin: 0 auto;
+    padding: 8px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  #submitButton {
+    display: block;
+    margin: 16px auto 0;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #submitButton:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Style the order display section */
+  #orderDisplay {
+    margin-top: 32px;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
