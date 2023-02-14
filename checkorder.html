@@ -6,11 +6,11 @@
 		<title></title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="" />
-		<link rel="website icon" type ="png" href="flashfood_logo-removebg-preview.png">
+		<link rel="stylesheet" href="checkorderstyle.css" />
 		<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
 	</head>
+
 	<body>
 		<h1>Find Your Order</h1>
 		<input type="text" id="studentIdInput" placeholder="Student ID" />
@@ -34,7 +34,7 @@
 		<script>
 			var studentIdInput = document.getElementById("studentIdInput");
 			var submitButton = document.getElementById("submitButton");
-			var studentDataDisplay = document.getElementById("orderDisplay");
+			var orderDisplay = document.getElementById("orderDisplay");
 
 			// Function to retrieve and display student data
 			function showStudentData() {
@@ -46,20 +46,23 @@
 					for (var time in times) {
 						var studentData = times[time][studentId];
 						if (studentData) {
-							studentDataDisplay.innerHTML =
-								"Time: " +
+							orderDisplay.innerHTML =
+								"Time of Delivery: " +
 								time +
 								"<br>" +
 								"Name: " +
 								studentData.name +
 								"<br>" +
 								"Meal: " +
-								studentData.meal;
+								studentData.meal +
+								"<br>" +
+								"Status: " +
+								studentData.status;
 							break;
 						}
 					}
 					if (!studentData) {
-						studentDataDisplay.innerHTML =
+						orderDisplay.innerHTML =
 							"No data found for student ID: " + studentId;
 					}
 				});
