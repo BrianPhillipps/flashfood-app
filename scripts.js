@@ -95,6 +95,20 @@ async function submitForm() {
 	}
 }
 
+
+// *************************THIS USES ACTUAL PAGE LOADING INSTEAD OF TIME // **********************************************************
+
+// $(document).ready(function () {
+// 	$(".content").hide();
+// 	$(window).on("load", function () {
+// 		$(".loader-wrapper").fadeOut("slow", function () {
+// 			$(".content").fadeIn("slow");
+// 		});
+// 	});
+// });
+
+// ***********************************************************************************************************
+
 // loading page
 $(document).ready(function () {
 	$(".content").hide();
@@ -110,6 +124,7 @@ function checkOrder() {
 	window.open("checkorder.html", "_blank");
 }
 
+// Check Menu
 function checkMenu() {
 	window.open("checkmenu.html", "_blank");
 }
