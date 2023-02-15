@@ -7,10 +7,16 @@
 	<body>
 		<h1>Order Confirmation</h1>
 		<p>Thank you for your order!</p>
-		<p id="delivery">Your order will be delivered at this time:</p>
+		<p id="delivery">Your order will be delivered at this time: </p>
 		<script>
 			var time = window.localStorage.getItem("time");
-			document.getElementById("delivery").innerHTML += time;
+      let modifiedTimeString = time.replace(":", ""); 
+      let num = parseInt(modifiedTimeString);
+      let newTime = modifiedTimeString - 1200;
+      var endTime = newTime.toString()
+      let displayTime = endTime.slice(0, 1) + ":" + endTime.slice(1);
+      console.log(displayTime);
+      document.getElementById("delivery").innerHTML += displayTime;
 		</script>
 		<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
