@@ -9,67 +9,13 @@
 		<link rel="stylesheet" href="checkorderstyle.css" />
 		<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+		<script src="checkorderscripts.js"></script>
 	</head>
 
 	<body>
 		<h1>Find Your Order</h1>
 		<input type="text" id="studentIdInput" placeholder="Student ID" />
-		<button id="submitButton">Search</button>
+		<button id="submitButton" onclick="showStudentData()">Search</button>
 		<div id="orderDisplay"></div>
-		<script>
-			var firebaseConfig = {
-				apiKey: "AIzaSyAVfWpeD9wGo0_WjL3U3Vl8rntODLn8Thc",
-				authDomain: "doordash-dining-hall.firebaseapp.com",
-				databaseURL: "https://doordash-dining-hall-default-rtdb.firebaseio.com",
-				projectId: "doordash-dining-hall",
-				storageBucket: "doordash-dining-hall.appspot.com",
-				messagingSenderId: "1017765572736",
-				appId: "1:1017765572736:web:e6237d4801c629f0c5f665",
-			};
-
-			firebase.initializeApp(firebaseConfig);
-			var database = firebase.database();
-		</script>
-
-		<script>
-			var studentIdInput = document.getElementById("studentIdInput");
-			var submitButton = document.getElementById("submitButton");
-			var orderDisplay = document.getElementById("orderDisplay");
-
-			// Function to retrieve and display student data
-			function showStudentData() {
-				var studentId = studentIdInput.value;
-				var studentDataRef = database.ref("times");
-
-				studentDataRef.once("value", function (snapshot) {
-					var times = snapshot.val();
-					for (var time in times) {
-						var studentData = times[time][studentId];
-						if (studentData) {
-							orderDisplay.innerHTML =
-								"Time of Delivery: " +
-								time +
-								"<br>" +
-								"Name: " +
-								studentData.name +
-								"<br>" +
-								"Meal: " +
-								studentData.meal +
-								"<br>" +
-								"Status: " +
-								studentData.status;
-							break;
-						}
-					}
-					if (!studentData) {
-						orderDisplay.innerHTML =
-							"No data found for student ID: " + studentId;
-					}
-				});
-			}
-
-			// Listen for click event on submit button
-			submitButton.addEventListener("click", showStudentData);
-		</script>
 	</body>
 </html>
