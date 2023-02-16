@@ -1,6 +1,5 @@
 var time = window.localStorage.getItem("time");
       let modifiedTimeString = time.replace(":", ""); 
-      let num = parseInt(modifiedTimeString);
       let newTime = modifiedTimeString - 1200;
       var endTime = newTime.toString()
       let displayTime = endTime.slice(0, 1) + ":" + endTime.slice(1);
