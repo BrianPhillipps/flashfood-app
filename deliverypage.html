@@ -7,9 +7,18 @@
 		<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
 	</head>
 	<body>
-		<h1>Order Confirmation</h1>
-		<p>Thank you for your order!</p>
-		<p id="delivery">Your order will be delivered at this time: </p>
-		<script src="delivery-page.js"></script>
+		<div class="container">
+			<div class="content">
+				<img class="check" src="accept.png" />
+				<h1>Order Confirmed</h1>
+				<p id="displayText">Thank you for your order!</p>
+				<p id="displayText">Your order will be delivered at this time:</p>
+				<u><p id="timeDis"></p></u>
+				<button class="check-order shrink-on-hover" onclick="checkOrder()">
+					Check Order
+				</button>
+				<script src="delivery-page.js"></script>
+			</div>
+		</div>
 	</body>
 </html>
