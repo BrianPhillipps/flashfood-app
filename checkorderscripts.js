@@ -28,7 +28,6 @@ function showStudentData() {
             var studentData = times[time][studentId];
             if (studentData) {
                 let modifiedTimeString = studentData.time.replace(":", ""); 
-                let num = parseInt(modifiedTimeString);
                 let newTime = modifiedTimeString - 1200;
                 var endTime = newTime.toString()
                 let displayTime = endTime.slice(0, 1) + ":" + endTime.slice(1);
