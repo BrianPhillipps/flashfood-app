@@ -28,6 +28,7 @@ async function submitForm() {
 	var room = document.getElementById("room").value;
 	var time = document.getElementById("time").value;
 	var phone = document.getElementById("phone").value;
+	var comment = document.getElementById("comment").value;
 	var ref = firebase.database().ref("times/" + time);
 	var timeRef = firebase.database().ref("times");
 	var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(kent.edu)$/;
@@ -107,6 +108,7 @@ async function submitForm() {
 				date: date,
 				name: name,
 				phone: phone,
+				comment: comment,
 				time: time,
 				room: room,
 				meal: meal,
