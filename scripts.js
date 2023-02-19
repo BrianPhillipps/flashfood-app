@@ -116,7 +116,7 @@ $(document).ready(function () {
 		$(".loader-wrapper").fadeOut("slow", function () {
 			$(".content").fadeIn("slow");
 		});
-	}, 2500);
+	}, 2100);
 });
 
 // Check Order
