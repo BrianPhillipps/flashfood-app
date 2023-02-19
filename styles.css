@@ -1,21 +1,21 @@
-.content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  }
-  
+
   .container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  
     border: 1px solid black;
     border-radius: 5%;
     padding: 15px;
     background-color: whitesmoke;
     padding-bottom: 30px;
     width: 300px;
+  }
+
+  h3 {
+    font-family: 'Source Sans Pro', sans-serif; 
+    text-align: center; 
+    color: #00205C;
   }
   body {
     background: hsla(219, 100%, 18%, 1);
@@ -30,6 +30,7 @@
     text-align: center;
     margin: 0 auto;
   }
+  
   
   .loader-wrapper {
     height: 100%;
@@ -132,3 +133,14 @@
     margin: 0;
   }
   }
+
+  @media only screen and (min-width: 375px) 
+  and (max-width: 812px){ 
+
+    h3 {
+      margin: 0;
+    }
+
+
+  }
+  
