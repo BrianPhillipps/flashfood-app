@@ -48,6 +48,30 @@ async function submitForm() {
 		phone == ""
 	) {
 		alert("Please fill in all fields");
+		if (name == "") {
+			document.getElementById("name").style.borderColor = "red";
+		}
+		if (email == "") {
+			document.getElementById("email").style.borderColor = "red";
+		}
+		if (id == "") {
+			document.getElementById("studentID").style.borderColor = "red";
+		}
+		if (dorm == "") {
+			document.getElementById("dorm").style.borderColor = "red";
+		}
+		if (meal == "") {
+			document.getElementById("meal").style.borderColor = "red";
+		}
+		if (room == "") {
+			document.getElementById("room").style.borderColor = "red";
+		}
+		if (time == "") {
+			document.getElementById("time").style.borderColor = "red";
+		}
+		if (phone == "") {
+			document.getElementById("phone").style.borderColor = "red";
+		}
 	} else if (!emailRegex.test(email)) {
 		alert("Please enter a valid Kent email address");
 	} else if (!idRegex.test(id)) {
@@ -95,20 +119,6 @@ async function submitForm() {
 	}
 }
 
-
-// *************************THIS USES ACTUAL PAGE LOADING INSTEAD OF TIME // **********************************************************
-
-// $(document).ready(function () {
-// 	$(".content").hide();
-// 	$(window).on("load", function () {
-// 		$(".loader-wrapper").fadeOut("slow", function () {
-// 			$(".content").fadeIn("slow");
-// 		});
-// 	});
-// });
-
-// ***********************************************************************************************************
-
 // loading page
 $(document).ready(function () {
 	$(".content").hide();
@@ -124,7 +134,6 @@ function checkOrder() {
 	window.open("checkorder.html", "_blank");
 }
 
-// Check Menu
 function checkMenu() {
 	window.open("checkmenu.html", "_blank");
 }
