@@ -26,47 +26,59 @@
 			firebase.initializeApp(firebaseConfig);
 			var database = firebase.database();
 
-			// Reference to the "times" node in the database
-			var timesRef = database.ref("times");
+// Reference to the "times" node in the database
+var timesRef = database.ref("times");
 
-			// Listen for changes in the data at the "times" node
-			timesRef.on("value", function (snapshot) {
-				// Get the value of the "times" node
-				var times = snapshot.val();
+// Listen for changes in the data at the "times" node
+timesRef.on("value", function (snapshot) {
+    // Get the value of the "times" node
+    var times = snapshot.val();
 
-				// Create an empty string to hold the HTML
-				var html = "";
+    // Create an empty string to hold the HTML
+    var html = "";
 
-				// Loop through each key in the "times" object
-				for (var key in times) {
-					// Get the data for the current key
-					var time = times[key];
+    // Loop through each key in the "times" object
+    for (var key in times) {
+        // Get the data for the current key
+        var time = times[key];
 
-					// Loop through each child in the current key
-					for (var id in time) {
-						// Get the data for the current child
-						var data = time[id];
+        // Loop through each child in the current key
+        for (var id in time) {
+            // Get the data for the current child
+            var data = time[id];
 
-						// Add the data to the HTML string
-						html += "<p>";
-						html += "Delivery Time: " + data.time + "<br>";
-						html += "Name: " + data.name + "<br>";
-						html += "Email: " + data.email + "<br>";
-						html += "Phone: " + data.phone + "<br>";
-						html += "Dorm: " + data.dorm + "<br>";
-						html += "Room: " + data.room + "<br>";
-						html += "Meal: " + data.meal + "<br>";
-						html += "Time Placed: " + data.date + "<br>";
-						html += "Status: " + data.status + "<br>";
-						html += "<button>In Progress</button>";
-						html += "<button>Closed</button>";
-						html += "</p>";
-					}
-				}
+            // Add the data to the HTML string
+            html += "<p>";
+            html += "ID: " + data.id + "<br>";
+            html += "Delivery Time: " + data.time + "<br>";
+            html += "Name: " + data.name + "<br>";
+            html += "Email: " + data.email + "<br>";
+            html += "Phone: " + data.phone + "<br>";
+            html += "Dorm: " + data.dorm + "<br>";
+            html += "Room: " + data.room + "<br>";
+            html += "Meal: " + data.meal + "<br>";
+            html += "Time Placed: " + data.date + "<br>";
+            html += "Status: " + data.status + "<br>";
+            html += "<button onclick=\"updateStatus('" + key + "', '" + id + "', 'In Progress')\">In Progress</button>";
+            html += "<button onclick=\"updateStatus('" + key + "', '" + id + "', 'Closed')\">Closed</button>";
+            html += "</p>";
+        }
+    }
 
-				// Set the innerHTML of an element to the HTML string
-				document.getElementById("dataContainer").innerHTML = html;
-			});
+    // Set the innerHTML of an element to the HTML string
+    document.getElementById("dataContainer").innerHTML = html;
+});
+
+// Function to update the status of an order in the database
+function updateStatus(timeKey, id, status) {
+    // Reference to the specific order in the database
+    var orderRef = database.ref("times/" + timeKey + "/" + id);
+
+    // Update the status of the order
+    orderRef.update({
+        status: status
+    });
+}
 		</script>
 	</body>
 </html>
