@@ -71,11 +71,6 @@ body {
   font-size: 25px;
 }
 
-@media screen and (max-width: 412px) {
-  body {
-    background-color: yellow;
-  }
-}
 
 .content {
   width: 800px;
@@ -93,4 +88,15 @@ body {
     padding-top: 15px;
 
   }
+}
+
+
+@media only screen and (min-width: 375px) 
+and (max-width: 812px){ 
+
+ .content {
+  background-color: yellow;
+ }
+
+
 }
