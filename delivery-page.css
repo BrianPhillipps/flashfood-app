@@ -21,6 +21,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+
 }
 
   h1 {
@@ -71,11 +72,10 @@ body {
   font-size: 25px;
 }
 
-@media screen and (max-width: 412px) {
-  body {
-    background-color: yellow;
-  }
+#lowerText {
+  font-size: 30px;
 }
+
 
 .content {
   width: 800px;
