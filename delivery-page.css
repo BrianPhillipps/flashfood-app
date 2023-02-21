@@ -103,5 +103,10 @@ and (max-width: 812px){
   padding-bottom: 15px;
  }
 
+ .container {
+  margin-top: -60px;
+
+ }
+
 
 }
