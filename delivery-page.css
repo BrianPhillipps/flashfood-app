@@ -21,7 +21,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-
 }
 
   h1 {
@@ -72,10 +71,11 @@ body {
   font-size: 25px;
 }
 
-#lowerText {
-  font-size: 30px;
+@media screen and (max-width: 412px) {
+  body {
+    background-color: yellow;
+  }
 }
-
 
 .content {
   width: 800px;
@@ -83,4 +83,14 @@ body {
   padding-top: 80px;
   background-color: whitesmoke;
   border-radius: 20px;
+}
+
+@media only screen and (min-width: 945px) and (max-width: 1280px) {
+
+  .content {
+    width: 750px;
+    height: 500px;
+    padding-top: 15px;
+
+  }
 }
