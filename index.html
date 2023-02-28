@@ -10,71 +10,70 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    <link rel="website icon" type ="png" href="flashfood_logo-removebg-preview.png">
+    <link rel="website icon" type="png" href="flashfood_logo-removebg-preview.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
-  <body> 
-
+  <body>
     <div class="loader-wrapper">
-      <span class="loader"><img src="lightning-removebg-preview.png" alt="Kent state lightning bolt"></span>
+      <span class="loader">
+        <img src="lightning-removebg-preview.png" alt="Kent state lightning bolt">
+      </span>
     </div>
-
-    
-<div class="content">
-  <div class="container">
-    <div class="header">
-      <h1 >FlashFood</h1>
-      <h3>Delivery hours: 6-8 PM</h3>
-    </div> 
-      <form>
+    <div class="content">
+      <div class="container">
+        <div class="header">
+          <h1>FlashFood</h1>
+          <h3>Delivery hours: 6-8 PM</h3>
+        </div>
+        <form>
           <div class="input">
-            <input type="text" id="name"placeholder="Name">
+            <input type="text" id="name" placeholder="Name">
           </div>
           <div class="input">
-          <input type="email" id="email" placeholder="Kent Email"/>
+            <input type="email" id="email" placeholder="Kent Email" />
           </div>
           <div class="input">
-          <input type="text" id="studentID" maxlength="9"placeholder="Student ID"/>
+            <input type="text" id="studentID" maxlength="9" placeholder="Student ID" />
           </div>
           <div class="input">
-          <input type="tel" id="phone" name="phone" placeholder="Phone Number: 123-456-6789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number: 123-456-6789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
           </div>
           <div class="input">
-          <input type="text" id="meal" placeholder="Meal" />
+            <input type="text" id="meal" placeholder="Meal" />
           </div>
           <div class="input">
             <input type="text" id="comment" placeholder="Additional Comments" />
-            </div>
+          </div>
           <div class="input">
-          <input type="text" id="room" placeholder="Room Number" />
-          </div>        
+            <input type="text" id="room" placeholder="Room Number" />
+          </div>
           <div class="input">
-          <select id="dorm">
-            <option value="" disabled selected hidden>Residence Hall</option>
-            <option value="Fletcher">Fletcher Hall</option>
-            <option value="Manchester">Manchester Hall</option>
-            <option value="Allyn">Allyn Hall</option>
-            <option value="Clark">Clark Hall</option>
-            <option value="Beall">Beall Hall</option>
-            <option value="McDowell">McDowell Hall</option>
-            <option value="Dunbar">Dunbar Hall</option>
-            <option value="Engleman">Engleman Hall</option>
-            <option value="Prentice">Prentice Hall</option>
-            <option value="Koonce">Koonce Hall</option>
-            <option value="Korb">Korb Hall</option>
-            <option value="Leebrick">Leebrick Hall</option>
-            <option value="wright">Wright Hall</option>
-            <option value="CentennialA">Centennial Court A</option>
-            <option value="CentennialB">Centennial Court B</option>
-            <option value="CentennialC">Centennial Court C</option>
-            <option value="CentennialD">Centennial Court D</option>
-            <option value="CentennialE">Centennial Court E</option>
-            <option value="CentennialF">Centennial Court F</option>
-            <option value="Johnson">Johnson Hall</option>
-            <option value="Lake">Lake Hall</option>
-            <option value="Olson">Olson Hall</option>
-            <option value="Stopher">Stopher Hall</option>
-          </select>
+            <select id="dorm">
+              <option value="" disabled selected hidden>Residence Hall</option>
+              <option value="Fletcher">Fletcher Hall</option>
+              <option value="Manchester">Manchester Hall</option>
+              <option value="Allyn">Allyn Hall</option>
+              <option value="Clark">Clark Hall</option>
+              <option value="Beall">Beall Hall</option>
+              <option value="McDowell">McDowell Hall</option>
+              <option value="Dunbar">Dunbar Hall</option>
+              <option value="Engleman">Engleman Hall</option>
+              <option value="Prentice">Prentice Hall</option>
+              <option value="Koonce">Koonce Hall</option>
+              <option value="Korb">Korb Hall</option>
+              <option value="Leebrick">Leebrick Hall</option>
+              <option value="wright">Wright Hall</option>
+              <option value="CentennialA">Centennial Court A</option>
+              <option value="CentennialB">Centennial Court B</option>
+              <option value="CentennialC">Centennial Court C</option>
+              <option value="CentennialD">Centennial Court D</option>
+              <option value="CentennialE">Centennial Court E</option>
+              <option value="CentennialF">Centennial Court F</option>
+              <option value="Johnson">Johnson Hall</option>
+              <option value="Lake">Lake Hall</option>
+              <option value="Olson">Olson Hall</option>
+              <option value="Stopher">Stopher Hall</option>
+            </select>
           </div>
           <div class="input">
             <select id="time">
@@ -92,23 +91,21 @@
               <option value="19:40">7:40 PM</option>
               <option value="19:50">7:50 PM</option>
               <option value="20:00">8:00 PM</option>
-              </select>
-              </div>
+            </select>
+          </div>
           <div class="contentButtons">
-          <div class="topButtons">
-          <button class="button shrink-on-hover" type="button" onclick="checkOrder()">Check Order</button>
-          <button class="button shrink-on-hover" type="button" onclick="checkMenu()">Menu</button>
-          
-        </form>  
-        </div>
-        <button class="button-submit shrink-on-hover" type="button" onclick="submitForm()" >Submit</button>
+            <div class="topButtons">
+              <button class="button shrink-on-hover" type="button" onclick="checkOrder()">Check Order</button>
+              <button class="button shrink-on-hover" type="button" onclick="checkMenu()">Menu</button>
+        </form>
       </div>
-   </div>
-  </div>
-  
-
+      <button class="button-submit shrink-on-hover" type="button" onclick="submitForm()">Submit</button>
+    </div>
+    </div>
+    </div>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
     <script src="scripts.js"></script>
   </body>
 </html>
+
