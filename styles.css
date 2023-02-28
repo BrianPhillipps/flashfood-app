@@ -1,3 +1,11 @@
+h1 {
+  margin: 0 0 10px 0;
+  font-size: 50px;
+  color:#00205C;
+  text-shadow: 2px 2px #EBA900;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+}
 
 .container {
   position: absolute;
