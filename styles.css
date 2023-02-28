@@ -1,13 +1,4 @@
 
-h1 {
-  margin: 0 0 8px 0;
-  font-size: 50px; 
-  color:#00205C; 
-  text-shadow: 2px 2px #EBA900; 
-  font-family: 'Source Sans Pro', sans-serif; 
-  text-align: center;
-}
-
 .container {
   position: absolute;
   top: 50%;
@@ -126,7 +117,7 @@ select {
 }
 .shrink-on-hover:hover, .shrink-on-hover:focus, .shrink-on-hover:active {
   -webkit-transform: scale(0.8);
-  transform: scale(0.8);
+  transform: scale(0.85);
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 945px) {
@@ -136,11 +127,7 @@ select {
 }
 
 .topButtons {
-  padding: 5px 0 10px 0;
-}
-
-.button-submit {
-  padding: 20px;
+  padding: 5px 0 15px 0;
 }
 
 h3 {
