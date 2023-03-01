@@ -141,6 +141,7 @@ function checkMenu() {
 }
 
 
+
 window.onload = function robot() {
 	console.log("       __\r\n   _  |@@|\r\n  \/ \\ \\--\/ __\r\n  ) O|----|  |   __\r\n \/ \/ \\ }{ \/\\ )_ \/ _\\\r\n )\/  \/\\__\/\\ \\__O (__\r\n|\/  (--\/\\--)    \\__\/\r\n\/   _)(  )(_\r\n   `---\'\'---`");
 }
