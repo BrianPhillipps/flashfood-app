@@ -13,26 +13,26 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
 // form submission
-var currentDate = new Date();
-var deliversAvailable = 20;
-var currentTime = new Date();
+const currentDate = new Date();
+const deliversAvailable = 20;
+const currentTime = new Date();
 async function submitForm() {
-	var date = currentDate.toString();
-	var selectedTime = new Date();
-	var status = "Ordered";
-	var name = document.getElementById("name").value;
-	var email = document.getElementById("email").value;
-	var id = document.getElementById("studentID").value;
-	var dorm = document.getElementById("dorm").value;
-	var meal = document.getElementById("meal").value;
-	var room = document.getElementById("room").value;
-	var time = document.getElementById("time").value;
-	var phone = document.getElementById("phone").value;
-	var comment = document.getElementById("comment").value;
-	var ref = firebase.database().ref("times/" + time);
-	var timeRef = firebase.database().ref("times");
-	var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(kent.edu)$/;
-	var idRegex = /^\d+$/;
+	const date = currentDate.toString();
+	const selectedTime = new Date();
+	const status = "Ordered";
+	const name = document.getElementById("name").value;
+	const email = document.getElementById("email").value;
+	const id = document.getElementById("studentID").value;
+	const dorm = document.getElementById("dorm").value;
+	const meal = document.getElementById("meal").value;
+	const room = document.getElementById("room").value;
+	const time = document.getElementById("time").value;
+	const phone = document.getElementById("phone").value;
+	const comment = document.getElementById("comment").value;
+	const ref = firebase.database().ref("times/" + time);
+	const timeRef = firebase.database().ref("times");
+	const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(kent.edu)$/;
+	const idRegex = /^\d+$/;
 	selectedTime.setHours(time.split(":")[0], time.split(":")[1], 0);
 
 	let now = new Date();
@@ -139,7 +139,6 @@ function checkOrder() {
 function checkMenu() {
 	window.open("checkmenu.html", "_blank");
 }
-
 
 
 window.onload = function robot() {
