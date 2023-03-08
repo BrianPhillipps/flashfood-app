@@ -102,5 +102,4 @@ function hidePage() {
 	document.getElementById("main").style.display = "block";
 }
 
-studentRef.remove();
-timesRef.remove();
+
