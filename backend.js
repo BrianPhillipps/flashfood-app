@@ -34,8 +34,30 @@ timesRef.on("value", function (snapshot) {
 			// Get the data for the current child
 			var data = time[id];
 
+			var statusClass = "";
+			switch (data.status) {
+				case "Ordered":
+					statusClass = "yellow";
+					break;
+				case "In Progress":
+					statusClass = "blue";
+					break;
+				case "Delivered":
+					statusClass = "green";
+					break;
+			}
+
+		
+
 			// Add the data to the HTML string
 			html += "<p>";
+						if (data.status === "Ordered") {
+    			html += "<div style='background-color: yellow'>";
+			} else if (data.status === "In Progress") {
+    			html += "<div style='background-color: blue'>";
+			} else if (data.status === "Delivered") {
+   				html += "<div style='background-color: green'>";
+			}		
 			html += "ID: " + data.id + "<br>";
 			html += "Delivery Time: " + data.time + "<br>";
 			html += "Name: " + data.name + "<br>";
@@ -44,7 +66,7 @@ timesRef.on("value", function (snapshot) {
 			html += "Dorm: " + data.dorm + "<br>";
 			html += "Room: " + data.room + "<br>";
 			html += "Meal: " + data.meal + "<br>";
-			html += "Time Placed: " + data.date + "<br>";
+			html += "Time Placed: " + data.date + "<br>";	
 			html += "Status: " + data.status + "<br>";
 			html +=
 				"<button onclick=\"updateStatus('" +
@@ -101,5 +123,4 @@ function hidePage() {
 	login.remove();
 	document.getElementById("main").style.display = "block";
 }
-
 
