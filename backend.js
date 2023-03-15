@@ -58,8 +58,8 @@ timesRef.on("value", function (snapshot) {
 			} else if (data.status === "Delivered") {
    				html += "<div style='background-color: green'>";
 			}		
-			html += "ID: " + data.id + "<br>";
-			html += "Delivery Time: " + data.time + "<br>";
+			html += "<strong>" + "ID: " + data.id + "</strong>" + "<br>";
+			html += "<strong>" + "Delivery Time: " + data.time + "</strong>" + "<br>";
 			html += "Name: " + data.name + "<br>";
 			html += "Email: " + data.email + "<br>";
 			html += "Phone: " + data.phone + "<br>";
