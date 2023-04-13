@@ -101,12 +101,17 @@ and (max-width: 812px){
  }
 
  #timeDis {
-  padding-bottom: 15px;
+  padding-bottom: 10px;
+  padding-top: 0px;
  }
 
  .container {
   margin-top: -40px;
 
+ }
+
+ h1 {
+  font-size: 38px;
  }
 
 
