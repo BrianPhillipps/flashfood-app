@@ -18,11 +18,36 @@
 			.green {
 				background-color: green;
 			}
+			#container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+			}
+
+			#main {
+				display: none;
+			}
+			
+			body {
+				overflow: hidden;
+			}
+
 		</style>
 	</head>
 	<body>
+		<div id="container">
+			<div id="login">
+				<input placeholder="Username" id="uname">
+				<br> <Br>
+				<input placeholder="Password" type="password" id="password">
+				<button onclick="login()">Log in</button>
+			</div>
+		</div>
+		<div id="main">
     <button onclick="clearOrders()">Clear Orders</button>
     <button onclick="clearDatabase()">Clear Database</button>
 		<div id="dataContainer"></div>
+	</div>
 	</body>
 </html>
