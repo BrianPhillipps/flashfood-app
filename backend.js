@@ -117,10 +117,29 @@ function clearDatabase() {
 }
 
 function hidePage() {
-	var login = document.getElementById("login");
-	var container = document.getElementById("container");
-	container.remove();
-	login.remove();
-	document.getElementById("main").style.display = "block";
-}
 
+
+	
+	}
+
+
+	function login() {
+	const username = document.getElementById("uname").value;
+	const password = document.getElementById("password").value;
+	const login = document.getElementById("login");
+	const container = document.getElementById("container");
+
+		if(username === "admin" && password === "password") {
+			container.remove();
+			login.remove();
+			document.getElementById("main").style.display = "block";
+			document.body.style.overflow = "auto";
+			
+		}
+
+		else {
+			alert("Wrong username or password");
+		}
+
+		
+	}
