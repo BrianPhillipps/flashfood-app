@@ -66,6 +66,7 @@ timesRef.on("value", function (snapshot) {
 			html += "<strong>" + "Dorm: " + data.dorm + "</strong>" + "<br>";
 			html += "<strong>" + "Room: " + data.room + "</strong>" + "<br>";
 			html += "Meal: " + data.meal + "<br>";
+			html += "Comments: " + data.comment + "<br>";
 			html += "Time Placed: " + data.date + "<br>";	
 			html += "Status: " + data.status + "<br>";
 			html +=
