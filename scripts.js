@@ -116,7 +116,7 @@ async function submitForm() {
 				dorm: dorm,
 			});
 			window.localStorage.setItem("time", time);
-			window.location = "deliverypage.html";
+			window.location.href = "deliverypage.html";
 		}
 	}
 }
